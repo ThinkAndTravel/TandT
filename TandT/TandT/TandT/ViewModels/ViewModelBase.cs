@@ -1,13 +1,17 @@
-﻿using Prism.Commands;
+﻿using Prism.AppModel;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace TandT.ViewModels
 {
-    public class ViewModelBase : BindableBase, INavigationAware, IDestructible
+    public class ViewModelBase : BindableBase, INavigationAware, IDestructible, IPageLifecycleAware
     {
         protected INavigationService NavigationService { get; private set; }
 
@@ -38,14 +42,40 @@ namespace TandT.ViewModels
             
         }
 
+        public bool IsInit = false;
         public virtual void Init()
         {
 
         }
 
+        CancellationTokenSource InitCancel;
+        public async virtual void OnAppearing()
+        {
+            if (!IsInit)
+            {
+                InitCancel = new CancellationTokenSource();
+                await Task.Factory.StartNew(() =>
+                { Init(); }, InitCancel.Token);
+                IsInit = true;
+            }
+        }
+
         public virtual void Destroy()
         {
-            
+            try
+            {
+                if (IsInit)
+                    InitCancel?.Cancel();
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void OnDisappearing()
+        {
+           
         }
     }
 }

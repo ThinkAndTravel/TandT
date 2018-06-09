@@ -77,7 +77,7 @@ namespace Identity.ViewModels
 
         private async void AttemptCreateAccount()
         {
-            await NavigationService.NavigateAsync("SignUp");//<SignUpViewModel>();
+            //await NavigationService.NavigateAsync("SignUp");//<SignUpViewModel>();
         }
 
         private async void AttemptForgotPas()
@@ -87,15 +87,15 @@ namespace Identity.ViewModels
 
         private async void AttemptLogin()
         {
-            if (CanExecuteLogin)
-                if (await AuthService.Login(model))
-                {
-                    await NavigationService.NavigateAsync("Menu/Nav/Dashboard?MyBalance&Markets");
-                }
-                else
-                {
-                    //TODO _dialogService.Alert("We were unable to log you in!", "Login Failed", "OK");
-                }
+            if (CanExecuteLogin) ;
+                //if (await AuthService.Login(model))
+                //{
+                //    await NavigationService.NavigateAsync("Menu/Nav/Dashboard?MyBalance&Markets");
+                //}
+                //else
+                //{
+                //    //TODO _dialogService.Alert("We were unable to log you in!", "Login Failed", "OK");
+                //}
         }
 
         private bool _canExecuteLogin()
@@ -104,7 +104,7 @@ namespace Identity.ViewModels
                    && (!string.IsNullOrEmpty(Password) || !string.IsNullOrWhiteSpace(Password));
         }
 
-        public override void Init()
+        public void Init()
         {
         }
     }

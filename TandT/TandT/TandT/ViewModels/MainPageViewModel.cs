@@ -1,19 +1,25 @@
 ﻿using Prism.Modularity;
+using Prism.Mvvm;
 using Prism.Navigation;
 
 namespace TandT.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class MainPageViewModel : BindableBase
     {
         private readonly IModuleManager _moduleManager;
         private readonly INavigationService _navigationService;
 
         public MainPageViewModel(INavigationService navigationService, IModuleManager module) 
-            : base (navigationService)
         {
             _moduleManager = module;
-            Title = "Main Page";
+            _navigationService = navigationService;
+            Init();
         }
 
+        public async void Init()
+        {
+            _moduleManager.LoadModule("Identity");
+            await _navigationService.NavigateAsync("Login");
+        }
     }
 }

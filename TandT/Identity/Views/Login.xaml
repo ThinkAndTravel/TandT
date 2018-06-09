@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:customview="clr-namespace:CustomControls"
+             xmlns:customview="CustomControls"
              x:Class="Identity.Views.Login">
     <Grid>
         <Grid.RowDefinitions>
@@ -38,9 +38,9 @@
                    Text="EMAIL"
                    HorizontalOptions="Center"
                    VerticalOptions="End"
-                   TextColor="#29BDCB"/>
+                   TextColor="Green"/>
 
-            <customview:CustomEntry
+            <!--<customview:CustomEntry
                        Grid.Column="1"
                        Grid.Row="2" 
                        CustomBorderColor="#29BDCB"
@@ -51,16 +51,16 @@
                        FontSize="Medium"  
                        Text="{Binding Email}"
                        VerticalOptions ="FillAndExpand"
-                       HorizontalOptions="FillAndExpand"/>
+                       HorizontalOptions="FillAndExpand"/>-->
 
             <Label Grid.Column="1"
                    Grid.Row="3"                 
                    Text="PASSWORD"
                    HorizontalOptions="Center"
                    VerticalOptions="End"
-                   TextColor="#29BDCB"/>
+                   TextColor="Red"/>
 
-            <customview:CustomEntry
+            <!--<customview:CustomEntry
                        Grid.Column="1"
                        Grid.Row="4" 
                        CustomBorderColor="#29BDCB"
@@ -73,19 +73,19 @@
                        Margin="2"
                        Text="{Binding Password}"
                        VerticalOptions ="FillAndExpand"
-                       HorizontalOptions="FillAndExpand"/>
+                       HorizontalOptions="FillAndExpand"/>-->
 
             <Label  Grid.Column="1"
                     Grid.Row="5"
                     FontSize="Small"
                     FontAttributes="Bold"
-                    TextColor="#34273B"
+                    TextColor="Green"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     LineBreakMode="WordWrap"
                     Text="Forgot password?"/>
 
-            <Button BackgroundColor="#29BDCB"
+            <Button BackgroundColor="Red"
                     Grid.Column="1"
                     Grid.Row="6"
                     TextColor="White"
@@ -99,7 +99,7 @@
 
         <!--footer-->
         <Grid Grid.Row="1"
-              BackgroundColor="#34273B">
+              BackgroundColor="Green">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -116,7 +116,7 @@
                    VerticalOptions="Center"
                    TextColor="White"
                    Text="NO ACCOUNT YET?"/>
-            <customview:CustomButton
+            <!--<customview:CustomButton
                             Grid.Column="1"
                             Grid.Row="1"                          
                             CustomBackgroundColor="#34273B"
@@ -130,7 +130,7 @@
                             Command="{Binding CreateAccountCommand}"
                             Text="CREATE ACOUNT"
                             FontSize="Medium"
-                            TextColor="White"/>
+                            TextColor="White"/>-->
         </Grid>
     </Grid>
 </ContentPage>
