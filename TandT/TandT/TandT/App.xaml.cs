@@ -5,17 +5,13 @@ using TandT.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
+using Prism.Modularity;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TandT
 {
     public partial class App : PrismApplication
     {
-        /* 
-         * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
-         * This imposes a limitation in which the App class must have a default constructor. 
-         * App(IPlatformInitializer initializer = null) cannot be handled by the Activator.
-         */
         public App() : this(null) { }
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
@@ -24,13 +20,19 @@ namespace TandT
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            //var module = new ModuleInfo(typeof(Identity.IdentityModule), "Identity", InitializationMode.OnDemand);
+            //moduleCatalog.AddModule(module);
         }
     }
 }

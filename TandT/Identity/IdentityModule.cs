@@ -14,7 +14,9 @@ namespace Identity
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
+            containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
+            containerRegistry.RegisterForNavigation<Registry, RegistryViewModel>();
+            containerRegistry.RegisterForNavigation<ForgotPass, ForgotPassViewModel>();
         }
     }
 }

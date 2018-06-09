@@ -5,12 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.2.832" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.2.832" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.550146" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.0.0.396" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\..\CustomControl\CustomControl.csproj" />
     <ProjectReference Include="..\..\Identity\Identity.csproj" />
   </ItemGroup>
 

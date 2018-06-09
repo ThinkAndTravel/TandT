@@ -189,10 +189,20 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.2.832</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.2.832</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.550146" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.0.0.396" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CustomControl\CustomControl.csproj">
+      <Project>{14f2ab4a-d485-4e9f-83e6-41983ad3bf11}</Project>
+      <Name>CustomControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TandT\TandT.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>TandT</Name>

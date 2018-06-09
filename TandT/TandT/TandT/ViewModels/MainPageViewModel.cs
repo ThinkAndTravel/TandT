@@ -1,19 +1,19 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Modularity;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TandT.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(INavigationService navigationService) 
+        private readonly IModuleManager _moduleManager;
+        private readonly INavigationService _navigationService;
+
+        public MainPageViewModel(INavigationService navigationService, IModuleManager module) 
             : base (navigationService)
         {
+            _moduleManager = module;
             Title = "Main Page";
         }
+
     }
 }

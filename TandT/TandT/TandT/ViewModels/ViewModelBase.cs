@@ -38,6 +38,11 @@ namespace TandT.ViewModels
             
         }
 
+        public virtual void Init()
+        {
+
+        }
+
         public virtual void Destroy()
         {
             
