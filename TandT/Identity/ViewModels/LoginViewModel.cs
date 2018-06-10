@@ -1,19 +1,24 @@
 ﻿using Prism.Commands;
+using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Services;
 
 namespace Identity.ViewModels
 {
     public class LoginViewModel : BindableBase
     {
         private readonly INavigationService Nav;
+        private readonly IModuleManager Mod;
 
-        public LoginViewModel(INavigationService navigationService) 
+        public LoginViewModel(INavigationService navigationService, IModuleManager module) 
         {
             Nav = navigationService;
+            Mod = module;
         }
 
         #region VAR
@@ -88,14 +93,16 @@ namespace Identity.ViewModels
         private async void AttemptLogin()
         {
             if (CanExecuteLogin)
-                if (await BLL.AuthService.Login(email, password))
+                if (!await BLL.AuthService.Login(email, password))
                 {
                     BLL.UserSetting.NewSession(email,password);
                     await Nav.GoBackAsync();
                 }
                 else
                 {
-                    //TODO ALERT
+                    Mod.LoadModule("Popup");
+                    await PopupNavigation.PushAsync(new Popup.Views.Alert());
+                  // await Nav.P("Alert");
                 }
         }
 

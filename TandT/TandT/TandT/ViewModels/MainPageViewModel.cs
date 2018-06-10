@@ -18,7 +18,7 @@ namespace TandT.ViewModels
 
         public async void Init()
         {
-            if (BLL.UserSetting.Data.ContainsKey("email"))
+            if (! BLL.UserSetting.Data.ContainsKey("email"))
             {
             }
             else

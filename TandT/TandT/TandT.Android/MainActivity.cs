@@ -34,6 +34,17 @@ namespace TandT.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
         }
+        public override void OnBackPressed()
+        {
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+               // Debug.WriteLine("Android back button: There are some pages in the PopupStack");
+            }
+            else
+            {
+                //Debug.WriteLine("Android back button: There are not any pages in the PopupStack");
+            }
+        }
     }
 
     public class AndroidInitializer : IPlatformInitializer

@@ -31,8 +31,8 @@ namespace TandT
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
-            var module = new ModuleInfo(typeof(Identity.IdentityModule), "Identity", InitializationMode.OnDemand);
-            moduleCatalog.AddModule(module);
+            moduleCatalog.AddModule(new ModuleInfo(typeof(Identity.IdentityModule), "Identity", InitializationMode.OnDemand));
+            moduleCatalog.AddModule(new ModuleInfo(typeof(Popup.PopupModule), "Popup", InitializationMode.OnDemand));
         }
     }
 }
