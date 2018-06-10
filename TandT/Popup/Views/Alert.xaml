@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
+             prism:ViewModelLocator.AutowireViewModel="True"           
+             NavigationPage.HasNavigationBar="False"
+             Padding="0"        
+             x:Class="Popup.Views.Alert">
+    <!--<pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Right"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>-->
+    <ContentView BackgroundColor="Transparent">
+        <StackLayout
+          Padding="0"
+          Margin="0"
+          BackgroundColor="White"
+          WidthRequest="250"             
+          HorizontalOptions="CenterAndExpand"
+          VerticalOptions="CenterAndExpand">
+            <Image HorizontalOptions="CenterAndExpand"
+               VerticalOptions="StartAndExpand"
+               Margin="10"
+               HeightRequest="50"          
+               Source="mail.png"/>
+            <Label Text="{Binding Title}"
+               FontSize="Medium"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="StartAndExpand"
+               TextColor="{Binding UtilityColor}"/>
+            <Label Margin="10,10,10,10" 
+               Text="{Binding Msg} " 
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="StartAndExpand"/>
+            <Button BackgroundColor="{Binding UtilityColor}"                  
+                TextColor="White"
+                Margin="10,10,10,10"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Command="{Binding YesCommand}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"           
+                Text="YES"/>
+            <Button Margin="10,10,10,10" 
+               Text="{Binding CancelText}" 
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="StartAndExpand"
+               BackgroundColor="Transparent"
+               Command="{Binding CancelCommand}"/>
+        </StackLayout>
+    </ContentView>
+</pages:PopupPage>

@@ -3,134 +3,138 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:customview="CustomControls"
+             xmlns:customview="clr-namespace:CustomControls;assembly=CustomControl"
              x:Class="Identity.Views.Login">
-    <Grid>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="logo" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style x:Key="entry" TargetType="customview:CustomEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Margin" Value="25,0,25,10" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="CustomBorderColor" Value="#4DD9EA"/>
+                <Setter Property="CustomBorderRadius" Value="1"/>
+                <Setter Property="CustomBorderWidth" Value="2"/>
+            </Style>
+            <Style x:Key="MainButton" TargetType="customview:CustomButton">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Margin" Value="25,10,25,5" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="CustomBorderColor" Value="#4DD9EA"/>
+                <Setter Property="CustomBorderRadius" Value="1"/>
+                <Setter Property="CustomBorderWidth" Value="2"/>
+            </Style>
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="Margin" Value="25,0,25,10" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#4DD9EA" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+            <Style x:Key="label" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="TextColor" Value="#4DD9EA" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Micro" />
+            </Style>
+            <Style x:Key="mainLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="TextColor" Value="#081B29" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="footer" TargetType="Grid">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="#081B29" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid RowSpacing="0" BackgroundColor="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        
+        <StackLayout Grid.Row="0"  
+                     Style="{StaticResource logo}">
+            <Image Source="logo.png" 
+                   HeightRequest="110"
+                   Margin="0,10,0,10"
+                   HorizontalOptions="Center"/>
+            
+            <Label Text="Think and Travel"
+                   Style="{StaticResource mainLabel}"/>
+        </StackLayout>
+        
+        <StackLayout Grid.Row="1" 
+                     VerticalOptions="CenterAndExpand">
+            
+            <Label Style="{StaticResource label}"
+                   Text="EMAIL"/>
 
-        <Grid Grid.Row="0" BackgroundColor="White">
+            <customview:CustomEntry   
+                       Style="{StaticResource entry}"
+                       Text="{Binding Email}"/>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="5*"/>
-            </Grid.RowDefinitions>
+            <Label 
+                   Style="{StaticResource label}"
+                   Text="PASSWORD"/>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <customview:CustomEntry
+                       Style="{StaticResource entry}"
+                       IsPassword="True"                    
+                       Text="{Binding Password}"/>
 
-            <Image Grid.Column="1"
-                   Source="https://www.cryptonext.net/images/wl_loginLogo-83.png"
-                   Grid.Row="0" />
-
-            <Label Grid.Column="1"
-                   Grid.Row="1"                 
-                   Text="EMAIL"
-                   HorizontalOptions="Center"
-                   VerticalOptions="End"
-                   TextColor="Green"/>
-
-            <!--<customview:CustomEntry
-                       Grid.Column="1"
-                       Grid.Row="2" 
-                       CustomBorderColor="#29BDCB"
-                       CustomBorderRadius="1"
-                       CustomBorderWidth="2" 
-                       CustomBackgroundColor="White"    
-                       Margin="1"                       
-                       FontSize="Medium"  
-                       Text="{Binding Email}"
-                       VerticalOptions ="FillAndExpand"
-                       HorizontalOptions="FillAndExpand"/>-->
-
-            <Label Grid.Column="1"
-                   Grid.Row="3"                 
-                   Text="PASSWORD"
-                   HorizontalOptions="Center"
-                   VerticalOptions="End"
-                   TextColor="Red"/>
-
-            <!--<customview:CustomEntry
-                       Grid.Column="1"
-                       Grid.Row="4" 
-                       CustomBorderColor="#29BDCB"
-                       CustomBorderRadius="1"
-                       CustomBorderWidth="2" 
-                       IsPassword="True"
-                       CustomBackgroundColor="White"
-                       FontSize="Medium"  
-                       BackgroundColor="White"
-                       Margin="2"
-                       Text="{Binding Password}"
-                       VerticalOptions ="FillAndExpand"
-                       HorizontalOptions="FillAndExpand"/>-->
-
-            <Label  Grid.Column="1"
-                    Grid.Row="5"
-                    FontSize="Small"
+            <Label  
+                    Style="{StaticResource label}"
                     FontAttributes="Bold"
-                    TextColor="Green"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    LineBreakMode="WordWrap"
-                    Text="Forgot password?"/>
-
-            <Button BackgroundColor="Red"
-                    Grid.Column="1"
-                    Grid.Row="6"
-                    TextColor="White"
-                    FontSize="Medium"
-                    FontAttributes="Bold"
-                    Command="{Binding LoginCommand}"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Center"           
+                    Text="Forgot password?">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button 
+                    Style="{StaticResource button}"
+                    Command="{Binding LoginCommand}"       
                     Text="LOGIN"/>
-        </Grid>
+        </StackLayout>
 
         <!--footer-->
-        <Grid Grid.Row="1"
-              BackgroundColor="Green">
+        <Grid Grid.Row="2"
+              HeightRequest="170"
+              Style="{StaticResource footer}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="1"
+            <Label 
                    Grid.Row="0"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    TextColor="White"
                    Text="NO ACCOUNT YET?"/>
-            <!--<customview:CustomButton
-                            Grid.Column="1"
+            <customview:CustomButton
+                            Style="{StaticResource MainButton}"
                             Grid.Row="1"                          
-                            CustomBackgroundColor="#34273B"
-                            CustomBorderColor="#29BDCB"
-                            CustomBorderRadius="1"
-                            CustomBorderWidth="2"    
-                            Margin="0,5,0,5"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Center"
                             FontAttributes="Bold"
                             Command="{Binding CreateAccountCommand}"
-                            Text="CREATE ACOUNT"
-                            FontSize="Medium"
-                            TextColor="White"/>-->
+                            Text="CREATE ACOUNT"/>
         </Grid>
     </Grid>
 </ContentPage>

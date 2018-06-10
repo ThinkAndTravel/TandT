@@ -9,11 +9,11 @@ namespace Identity.ViewModels
 {
     public class LoginViewModel : BindableBase
     {
-      
+        private readonly INavigationService Nav;
 
         public LoginViewModel(INavigationService navigationService) 
-        {  
-            Init();
+        {
+            Nav = navigationService;
         }
 
         #region VAR
@@ -77,25 +77,26 @@ namespace Identity.ViewModels
 
         private async void AttemptCreateAccount()
         {
-            //await NavigationService.NavigateAsync("SignUp");//<SignUpViewModel>();
+            await Nav.NavigateAsync("Registry");
         }
 
         private async void AttemptForgotPas()
         {
-            //TODO
+            await Nav.NavigateAsync("Forgot");
         }
 
         private async void AttemptLogin()
         {
-            if (CanExecuteLogin) ;
-                //if (await AuthService.Login(model))
-                //{
-                //    await NavigationService.NavigateAsync("Menu/Nav/Dashboard?MyBalance&Markets");
-                //}
-                //else
-                //{
-                //    //TODO _dialogService.Alert("We were unable to log you in!", "Login Failed", "OK");
-                //}
+            if (CanExecuteLogin)
+                if (await BLL.AuthService.Login(email, password))
+                {
+                    BLL.UserSetting.NewSession(email,password);
+                    await Nav.GoBackAsync();
+                }
+                else
+                {
+                    //TODO ALERT
+                }
         }
 
         private bool _canExecuteLogin()

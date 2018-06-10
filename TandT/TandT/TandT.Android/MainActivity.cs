@@ -19,7 +19,7 @@ namespace TandT.Droid
             base.OnCreate(bundle);
 
             CachedImageRenderer.Init(true);
-
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
 
             var config = new FFImageLoading.Config.Configuration()
             {

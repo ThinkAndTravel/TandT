@@ -18,8 +18,14 @@ namespace TandT.ViewModels
 
         public async void Init()
         {
-            _moduleManager.LoadModule("Identity");
-            await _navigationService.NavigateAsync("Login");
+            if (BLL.UserSetting.Data.ContainsKey("email"))
+            {
+            }
+            else
+            {
+                _moduleManager.LoadModule("Identity");
+                await _navigationService.NavigateAsync("Login");
+            }
         }
     }
 }

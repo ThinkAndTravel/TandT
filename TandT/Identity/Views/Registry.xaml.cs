@@ -8,5 +8,9 @@ namespace Identity.Views
         {
             InitializeComponent();
         }
+        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        {
+            Device.OpenUri(new System.Uri("https://www.cryptonext.net/terms.php?page=terms"));
+        }
     }
 }

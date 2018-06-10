@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Identity.ViewModels;
+using Xamarin.Forms;
 
 namespace Identity.Views
 {
@@ -7,6 +8,11 @@ namespace Identity.Views
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        {
+            ((LoginViewModel)this.BindingContext).ForgotCommand.Execute();
         }
     }
 }

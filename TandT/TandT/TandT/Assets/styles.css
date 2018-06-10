@@ -1,9 +1,5 @@
 ﻿^contentpage {
-    background-color: lightgray;
-}
-
-#listView {
-    background-color: lightgray;
+    background-color: white;
 }
 
 stacklayout {
@@ -11,25 +7,10 @@ stacklayout {
     padding: 0;
 }
 
-.mainPageTitle {
-    font-style: bold;
-    font-size: medium;
-}
-
-.mainPageSubtitle {
-    margin-top: 15;
-}
-
 .detailPageTitle {
     font-style: bold;
     font-size: medium;
-
     text-align: center;
-}
-
-.detailPageSubtitle {
-    text-align: center;
-    font-style: italic;
 }
 
 listview image {
@@ -37,7 +18,19 @@ listview image {
     width: 60;
 }
 
-stacklayout > image {
+#stacklayout > image {
     height: 200;
     width: 200;
+}
+
+.Label {
+    color: rebeccapurple;
+}
+
+.Footer {
+    background-color: aqua;
+}
+
+.MainButton {
+    background-color: red;
 }
