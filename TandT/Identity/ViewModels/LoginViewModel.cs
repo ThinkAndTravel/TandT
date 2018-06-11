@@ -101,8 +101,11 @@ namespace Identity.ViewModels
                 else
                 {
                     Mod.LoadModule("Popup");
-                    await PopupNavigation.PushAsync(new Popup.Views.Alert());
-                  // await Nav.P("Alert");
+                    var data = new Dictionary<string, string>();
+                    data.Add("Msg", "Login failed. Please try again.");
+                    data.Add("Title", "ERROR");
+                    if (Popup.PopupService.AddNewParameters(data))
+                        await PopupNavigation.PushAsync(new Popup.Views.Alert());
                 }
         }
 

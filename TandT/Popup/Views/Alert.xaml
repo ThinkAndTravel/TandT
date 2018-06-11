@@ -5,7 +5,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
              prism:ViewModelLocator.AutowireViewModel="True"          
              xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-             Padding="100"        
+             Padding="0"        
              x:Class="Popup.Views.Alert">
     <pages:PopupPage.Animation>
         <animations:ScaleAnimation 
@@ -19,41 +19,82 @@
             EasingOut="SinIn"
             HasBackgroundAnimation="True"/>
     </pages:PopupPage.Animation>
+    
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="logo" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+          
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="Margin" Value="10,5,10,5" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#4DD9EA" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+            
+            <Style x:Key="cancelButton" TargetType="Button">
+                <Setter Property="Margin" Value="10,0,10,10" />
+                <Setter Property="TextColor" Value="#081B29" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+            
+            <Style x:Key="label" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="TextColor" Value="#4DD9EA" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+            
+            <Style x:Key="mainLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="TextColor" Value="#081B29" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            
+            <Style x:Key="footer" TargetType="Grid">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="#081B29" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
     <StackLayout
           Padding="0"
           Margin="0"
-          BackgroundColor="White"
-          WidthRequest="250"             
+          BackgroundColor="White"                   
           HorizontalOptions="Center"
           VerticalOptions="Center">
+        
         <Image HorizontalOptions="CenterAndExpand"
                VerticalOptions="StartAndExpand"
                Margin="10"
                HeightRequest="50"          
                Source="mail.png"/>
+        
         <Label Text="{Binding Title}"
-               FontSize="Medium"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="StartAndExpand"
-               TextColor="{Binding UtilityColor}"/>
+               Style="{StaticResource mainLabel}"/>
+        
         <Label Margin="10,10,10,10" 
                Text="{Binding Msg} " 
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="StartAndExpand"/>
-        <Button BackgroundColor="{Binding UtilityColor}"                  
-                TextColor="White"
-                Margin="10,10,10,10"
-                FontSize="Medium"
-                FontAttributes="Bold"
-                Command="{Binding YesCommand}"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="EndAndExpand"           
+               Style="{StaticResource label}"/>
+        
+        <Button Style="{StaticResource button}"
+                Command="{Binding YesCommand}"      
                 Text="YES"/>
-        <Button Margin="10,10,10,10" 
-               Text="{Binding CancelText}" 
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="StartAndExpand"
-               BackgroundColor="Transparent"
-               Command="{Binding CancelCommand}"/>
+
+        <Button  
+                Text="{Binding CancelText}" 
+                Style="{StaticResource cancelButton}"
+                BackgroundColor="Transparent"            
+                Command="{Binding CancelCommand}"/>
     </StackLayout>  
 </pages:PopupPage>

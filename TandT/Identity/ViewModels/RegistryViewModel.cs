@@ -27,7 +27,6 @@ namespace Identity.ViewModels
 
             set {
                 SetProperty(ref _email, value);
-
             }
         }
 

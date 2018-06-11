@@ -22,4 +22,8 @@
     <ProjectReference Include="..\..\Identity\Identity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\Новая папка\" />
+  </ItemGroup>
+
 </Project>
