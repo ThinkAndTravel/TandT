@@ -2,10 +2,71 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
+             xmlns:customview="clr-namespace:CustomControls;assembly=CustomControl"
              x:Class="TandT.App">
 	<Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Color1">#081B29</Color>
+            <Color x:Key="Color2">#4DD9EA</Color>
+            <Color x:Key="Color3">#80CBC4</Color>
+            <!--LABEL-->
+            <Style x:Key="label" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="TextColor" Value="{StaticResource Color2}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Micro" />
+            </Style>
 
-		<!-- Application resource dictionary -->
+            <!--STACKLAYOUT-->
+            <!--LISTVIEW-->
+            <!--CUSTOM-->
+            <Style x:Key="customEntry" TargetType="customview:CustomEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Margin" Value="15,0,15,10" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="CustomBorderColor" Value="{StaticResource Color2}"/>
+                <Setter Property="CustomBorderRadius" Value="1"/>
+                <Setter Property="CustomBorderWidth" Value="2"/>
+            </Style>
 
-	</Application.Resources>
+            <Style x:Key="customButton" TargetType="customview:CustomButton">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Margin" Value="25,5,25,5" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="CustomBorderColor" Value="{StaticResource Color2}"/>
+                <Setter Property="CustomBorderRadius" Value="1"/>
+                <Setter Property="CustomBorderWidth" Value="2"/>
+            </Style>
+            
+            <!--BUTTON-->
+                <Style x:Key="button" TargetType="Button">
+                <Setter Property="Margin" Value="50,0,50,15" />
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Color2}" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+            </Style>
+            
+            <!--GRID-->
+            <Style x:Key="footer" TargetType="Grid">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Color1}" />
+            </Style>
+            
+        </ResourceDictionary>
+
+    </Application.Resources>
 </prism:PrismApplication>

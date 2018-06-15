@@ -8,7 +8,7 @@ namespace TandT.ViewModels
 {
     public class ViewModelBase : BindableBase, INavigationAware, IDestructible, IPageLifecycleAware
     {
-        protected INavigationService NavigationService { get; private set; }
+        protected INavigationService Nav { get; private set; }
 
         private string _title;
         public string Title
@@ -19,7 +19,7 @@ namespace TandT.ViewModels
 
         public ViewModelBase(INavigationService navigationService)
         {
-            NavigationService = navigationService;
+            Nav = navigationService;
         }
 
         public virtual void OnNavigatedFrom(NavigationParameters parameters)

@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
 using Prism.Modularity;
+using TandT.Views.Dashboard;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TandT
@@ -25,8 +26,12 @@ namespace TandT
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<NavigationPage>("Nav");
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<TandT.Views.Menu.Menu, MenuViewModel>("Menu");
+            containerRegistry.RegisterForNavigation<Dashboard, DashboardViewModel>("Dashboard");
+            containerRegistry.RegisterForNavigation<News, NewsViewModel>("News");
+            containerRegistry.RegisterForNavigation<Profile, ProfileViewModel>("Profile");
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

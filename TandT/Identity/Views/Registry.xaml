@@ -79,8 +79,7 @@
                    HorizontalOptions="Center"/>
         </StackLayout>
         <ScrollView Grid.Row="1">
-        <StackLayout Grid.Row="1" 
-                     VerticalOptions="CenterAndExpand">
+        <StackLayout  VerticalOptions="CenterAndExpand">
 
             <Label Style="{StaticResource label}"
                    Text="EMAIL"/>
