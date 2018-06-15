@@ -1,34 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="Prism.Forms" Version="7.0.0.396" />
     <PackageReference Include="Prism.Plugin.Popups.DryIoc" Version="2.0.0-pre6" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.158-pre" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.0.9" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.2.832" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.2.832" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.561731" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.0.0.396" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\..\ContentView\ContentView.csproj" />
     <ProjectReference Include="..\..\CustomControl\CustomControl.csproj" />
+    <ProjectReference Include="..\..\Execution\Execution.csproj" />
     <ProjectReference Include="..\..\Identity\Identity.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="ViewModels\Quests\" />
     <Folder Include="ViewModels\Market\" />
     <Folder Include="Views\Market\" />
     <Folder Include="Views\Quests\" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Views\Dashboard\Dashboard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -43,5 +41,4 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
 </Project>

@@ -5,4 +5,12 @@
   <ItemGroup>
     <Folder Include="API\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Forms" Version="7.0.0.396" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Prism, Version=7.0.0.396, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59">
+      <HintPath>..\..\..\Users\HP\.nuget\packages\prism.core\7.0.0.396\lib\netstandard2.0\Prism.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

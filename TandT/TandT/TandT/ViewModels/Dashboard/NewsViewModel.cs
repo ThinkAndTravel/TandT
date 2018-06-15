@@ -1,12 +1,8 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Models.Base;
 
 namespace TandT.ViewModels
 {
-	public class NewsViewModel : BindableBase
+	public class NewsViewModel : BaseTabVM
 	{
         public NewsViewModel()
         {

@@ -6,8 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Prism.Forms" Version="7.0.0.396" />
     <PackageReference Include="Refit" Version="4.5.6" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
   </ItemGroup>
 
 </Project>

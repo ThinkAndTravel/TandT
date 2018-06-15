@@ -1,7 +1,5 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
-using ContentView.Views;
-using ContentView.ViewModels;
 
 namespace ContentView
 {
@@ -14,7 +12,7 @@ namespace ContentView
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
+            
         }
     }
 }
