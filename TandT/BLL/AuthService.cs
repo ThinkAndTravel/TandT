@@ -17,7 +17,7 @@ namespace BLL
         {
             get  
             {                
-                return AppSetting.AppData.ContainsKey("Email");
+               return AppSetting.AppData.ContainsKey("email");
             }
         }
 

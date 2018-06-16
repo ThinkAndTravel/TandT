@@ -43,14 +43,7 @@ namespace Models.Base
         public virtual void OnNavigatedFrom(NavigationParameters parameters) { }
 
         public async virtual void OnNavigatedTo(NavigationParameters parameters)
-        {
-            if (!IsInit)
-            {
-                IsInit = true;
-                InitCancel = new CancellationTokenSource();
-                await Task.Factory.StartNew(() =>
-                { Init(); }, InitCancel.Token);
-            }
+        {           
         }
 
         public virtual void OnNavigatingTo(NavigationParameters parameters) { }
@@ -60,7 +53,7 @@ namespace Models.Base
             try
             {
                 InitCancel?.Cancel();
-                IsInit = false;
+                //IsInit = false;
             }
             catch
             {
