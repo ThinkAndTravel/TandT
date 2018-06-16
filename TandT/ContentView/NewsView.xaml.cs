@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ContentView.Views
+namespace Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class QuestView : Xamarin.Forms.ContentView
-	{
-		public QuestView ()
+	public partial class NewsView : Xamarin.Forms.ContentView
+    {
+		public NewsView ()
 		{
 			InitializeComponent ();
 		}

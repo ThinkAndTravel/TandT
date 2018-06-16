@@ -11,14 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Views\NewsView.xaml">
+    <EmbeddedResource Update="NewsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\QuestView.xaml">
+    <EmbeddedResource Update="QuestView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

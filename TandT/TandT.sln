@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Popup", "Popup\Popup.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Execution", "Execution\Execution.csproj", "{0411225A-651A-4449-B10E-4850F32F60B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentView", "ContentView\ContentView.csproj", "{749E87B7-B812-4762-8DA5-7CFBD8AB82D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Views", "ContentView\Views.csproj", "{749E87B7-B812-4762-8DA5-7CFBD8AB82D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

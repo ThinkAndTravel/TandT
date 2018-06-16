@@ -34,6 +34,7 @@
                 <ListView x:Name="MenuList"
                           Style="{StaticResource MenuList}"               
                           ItemsSource="{Binding Items}"
+                          ItemTapped="OnItemTapped"
                           Grid.Row="0" 
                           Grid.Column="0">
 
@@ -63,19 +64,18 @@
                                 Source="{Binding AvatarUrl}">
                                 <ffimageloading:CachedImage.Transformations>
                                     <fftransformations:CircleTransformation
-                                        BorderHexColor="#29BDCB"                                  
+                                        BorderHexColor="{StaticResource Color2}"                                  
                                         BorderSize="3"/>
                                 </ffimageloading:CachedImage.Transformations>
                             </ffimageloading:CachedImage>
 
                             <Label 
-                                 Grid.Row="2"
-                                 Grid.Column="1"
-                                 Text="{Binding Name}"
-                                 HorizontalOptions="Center"
-                                 TextColor="{Binding UtilityColor}"
-                                 FontAttributes="Bold"
-                                 FontSize="Small"/>
+                                   Grid.Row="2"
+                                   Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   Style="{StaticResource label}"                                 
+                                   FontAttributes="Bold"
+                                   FontSize="Small"/>
                         </Grid>
                     </ListView.Header>
 

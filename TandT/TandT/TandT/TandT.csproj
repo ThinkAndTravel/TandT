@@ -16,7 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BLL\BLL.csproj" />
-    <ProjectReference Include="..\..\ContentView\ContentView.csproj" />
+    <ProjectReference Include="..\..\ContentView\Views.csproj" />
     <ProjectReference Include="..\..\CustomControl\CustomControl.csproj" />
     <ProjectReference Include="..\..\Execution\Execution.csproj" />
     <ProjectReference Include="..\..\Identity\Identity.csproj" />

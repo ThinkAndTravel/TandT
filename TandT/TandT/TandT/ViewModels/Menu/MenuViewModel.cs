@@ -27,8 +27,7 @@ namespace TandT.ViewModels
         {
             
             NavigateCommand = new DelegateCommand<MenuItem>(OnNavigateCommandExecuted);
-            MyProfileTappedCommand = new DelegateCommand(MyProfileTappedCommandExecuted);
-
+            
             var _items = new ObservableCollection<MenuItem>();
 
             _items.Add(new MenuItem("Dashboard", "Dashboard?MyBalance&Markets", "house.png"));
@@ -47,8 +46,6 @@ namespace TandT.ViewModels
 
         public DelegateCommand<MenuItem> NavigateCommand { get; }
 
-        public DelegateCommand MyProfileTappedCommand { get; }
-
         #endregion
 
         private async void OnNavigateCommandExecuted(MenuItem item)
@@ -56,17 +53,14 @@ namespace TandT.ViewModels
                 AuthService.CloseSession();
             await Nav.NavigateAsync(item.Path);
         }
-        private void MyProfileTappedCommandExecuted()
-        {
-            //TODO 
-        }
+       
             
         public override async void Init()
         {
             //var info = await ViewModelBase.Auth?.GetMenuInfo();
-            AvatarUrl = "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/24993442_721401698057538_830102265302037757_n.jpg?_nc_cat=0&oh=f7cc6001ea92acea19bfe698f5ed110b&oe=5BB26F96";
+            //AvatarUrl = "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/24993442_721401698057538_830102265302037757_n.jpg?_nc_cat=0&oh=f7cc6001ea92acea19bfe698f5ed110b&oe=5BB26F96";
             Name = "Ivanenko";
-            RaisePropertyChanged("AvatarUrl");
+            //RaisePropertyChanged("AvatarUrl");
             RaisePropertyChanged("Name");
         }
     }

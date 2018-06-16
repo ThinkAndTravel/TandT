@@ -7,10 +7,7 @@ namespace TandT.ViewModels
 {
     public class MainPageViewModel : BaseVM
     {
-        public MainPageViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod)
-        {
-            //Init();
-        }
+        public MainPageViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod){}
 
         public override async void Init()
         {
@@ -23,11 +20,6 @@ namespace TandT.ViewModels
                 Mod.LoadModule("Identity");
                 await Nav.NavigateAsync("Login");
             }
-        }
-
-        public override void OnNavigatedTo(NavigationParameters parameters)
-        {
-            Init();
         }
 
     }

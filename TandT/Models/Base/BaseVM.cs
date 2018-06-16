@@ -1,4 +1,5 @@
-﻿using Prism.Modularity;
+﻿using Prism.AppModel;
+using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -8,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace Models.Base
 {
-    public abstract class BaseVM : BindableBase, INavigationAware, IDestructible
+    public abstract class BaseVM : BindableBase, INavigationAware, IDestructible, IPageLifecycleAware
     {
         public readonly INavigationService Nav;
 
         public readonly IModuleManager Mod;
+
         #region VAR 
 
         private string _title = "";
@@ -40,7 +42,16 @@ namespace Models.Base
 
         public virtual void OnNavigatedFrom(NavigationParameters parameters) { }
 
-        public virtual void OnNavigatedTo(NavigationParameters parameters) { }
+        public async virtual void OnNavigatedTo(NavigationParameters parameters)
+        {
+            if (!IsInit)
+            {
+                IsInit = true;
+                InitCancel = new CancellationTokenSource();
+                await Task.Factory.StartNew(() =>
+                { Init(); }, InitCancel.Token);
+            }
+        }
 
         public virtual void OnNavigatingTo(NavigationParameters parameters) { }
 
@@ -49,6 +60,7 @@ namespace Models.Base
             try
             {
                 InitCancel?.Cancel();
+                IsInit = false;
             }
             catch
             {
@@ -61,10 +73,10 @@ namespace Models.Base
         {
             if (!IsInit)
             {
+                IsInit = true;
                 InitCancel = new CancellationTokenSource();
                 await Task.Factory.StartNew(() =>
                 { Init(); }, InitCancel.Token);
-                IsInit = true;
             }
         }
 
