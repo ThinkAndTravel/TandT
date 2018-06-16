@@ -3,7 +3,7 @@ using System;
 
 namespace Models.View
 {
-    public class News
+    public class NewsView
     {
         #region VAR
 

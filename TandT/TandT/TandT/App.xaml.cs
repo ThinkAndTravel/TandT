@@ -7,6 +7,9 @@ using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
 using Prism.Modularity;
 using TandT.Views.Dashboard;
+using TandT.Views.Market;
+using TandT.Views.Plans;
+using TandT.Views.Friends;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TandT

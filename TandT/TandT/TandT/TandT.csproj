@@ -24,6 +24,8 @@
   <ItemGroup>
     <Folder Include="ViewModels\Quests\" />
     <Folder Include="ViewModels\Market\" />
+    <Folder Include="ViewModels\Plans\" />
+    <Folder Include="ViewModels\Friends\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\Dashboard\Dashboard.xaml">

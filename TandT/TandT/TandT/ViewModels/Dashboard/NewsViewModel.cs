@@ -13,14 +13,14 @@ namespace TandT.ViewModels
 
 		public async override void Init()
 		{
-            var list = new List<News>();
-            list.Add(new News());
-            Items = new ObservableCollection<News>(list);
+            var list = new List<NewsView>();
+            list.Add(new NewsView());
+            Items = new ObservableCollection<NewsView>(list);
             RaisePropertyChanged("Items");
 		}
         #region VAR 
-        ObservableCollection<News> items;
-        public ObservableCollection<News> Items {
+        ObservableCollection<NewsView> items;
+        public ObservableCollection<NewsView> Items {
             get { return items; }
             set { SetProperty(ref items, value); }
         }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models.View
 {
-    class Quest
+    public class PlanView
     {
     }
 }
