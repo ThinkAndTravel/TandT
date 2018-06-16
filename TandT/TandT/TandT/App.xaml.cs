@@ -33,6 +33,10 @@ namespace TandT
             containerRegistry.RegisterForNavigation<News, NewsViewModel>("News");
             containerRegistry.RegisterForNavigation<Profile, ProfileViewModel>("Profile");
             containerRegistry.RegisterForNavigation<UserQuests>();
+            containerRegistry.RegisterForNavigation<Quests>();
+            containerRegistry.RegisterForNavigation<Market>();
+            containerRegistry.RegisterForNavigation<Friends>();
+            containerRegistry.RegisterForNavigation<Plans>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

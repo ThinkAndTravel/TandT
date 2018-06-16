@@ -24,8 +24,6 @@
   <ItemGroup>
     <Folder Include="ViewModels\Quests\" />
     <Folder Include="ViewModels\Market\" />
-    <Folder Include="Views\Market\" />
-    <Folder Include="Views\Quests\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\Dashboard\Dashboard.xaml">
@@ -38,6 +36,18 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Dashboard\UserQuests.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Friends\Friends.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Market\Market.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Plans\Plans.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Quests\Quests.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Menu\Menu.xaml">

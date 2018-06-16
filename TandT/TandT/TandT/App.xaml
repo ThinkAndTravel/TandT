@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
              xmlns:customview="clr-namespace:CustomControls;assembly=CustomControl"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="TandT.App">
 	<Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Color1">#081B29</Color>
             <Color x:Key="Color2">#4DD9EA</Color>
-            <Color x:Key="Color3">#80CBC4</Color>
+            <Color x:Key="Color3">#113855</Color>
             <!--LABEL-->
             <Style x:Key="label" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -17,7 +18,16 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="FontSize" Value="Micro" />
             </Style>
-
+            <!--IMAGE-->
+            <Style x:Key="avatar" TargetType="ffimageloading:CachedImage">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="DownsampleToViewSize" Value="True" />
+                <Setter Property="LoadingPlaceholder" Value="user.png" />
+                <Setter Property="ErrorPlaceholder" Value="user.png" />
+                <Setter Property="Aspect" Value="AspectFit"/>
+            </Style>
             <!--STACKLAYOUT-->
             <!--LISTVIEW-->
             <Style x:Key="list" TargetType="ListView">

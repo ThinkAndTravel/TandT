@@ -15,7 +15,7 @@
                         <Setter Property="BackgroundColor" Value="{StaticResource Color2}" />
                     </Style>
                     <Style x:Key="MenuList" TargetType="ListView">
-                        <Setter Property="SeparatorColor" Value="LightGray"/>
+                        <Setter Property="SeparatorColor" Value="{StaticResource Color3}"/>
                         <Setter Property="SeparatorVisibility" Value="Default"/>
                         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                         <Setter Property="VerticalOptions" Value="FillAndExpand"/>
@@ -53,11 +53,10 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="5"/>
                             </Grid.RowDefinitions>
-                            <ffimageloading:CachedImage 
+                            <ffimageloading:CachedImage  Style="{StaticResource avatar}"
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"
+                               
                                 DownsampleToViewSize="true"
                                 Aspect="AspectFit"
                                 ErrorPlaceholder="user.png"
@@ -88,7 +87,7 @@
                                     <Label 
                                         Text="{Binding Title}"
                                         Grid.Column="1"
-                                        FontSize="Small"
+                                        FontSize="Medium"
                                         TextColor="White"
                                         Margin="30,0,5,0"
                                         VerticalOptions="Center"/>
@@ -98,7 +97,7 @@
                                         WidthRequest="30"
                                         Margin="0,0,30,0"
                                         HorizontalOptions="EndAndExpand"
-                                        HeightRequest="30" />
+                                        HeightRequest="40" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

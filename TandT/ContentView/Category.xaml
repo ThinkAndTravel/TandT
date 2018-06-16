@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Views.Category">
+    <ViewCell.View>
+        <Grid Margin="10,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                 FontSize="Large"/>
+
+            <Label 
+                   Grid.Row="0"
+                   Grid.Column="1"
+                TextColor="Gray"/>
+            <Image 
+                Grid.Column="0"
+                Grid.Row="1"/>
+
+            <Image
+                Grid.Column="1"
+                Grid.Row="1"/>
+
+            <Label 
+                Grid.Column="0"
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Gray"/>
+            <Label 
+                Grid.Column="1"
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                TextColor="Gray"/>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

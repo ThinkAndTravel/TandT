@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.appname">
-	<uses-sdk android:minSdkVersion="21" />
-        <uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="TandT.Android" android:icon="@mipmap/ic_launcher"></application>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0.3" package="com.tandt.thinkandtravel" android:installLocation="auto" android:versionCode="3">
+	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:icon="@drawable/logo" android:label="Think &amp; Travel"></application>
 </manifest>

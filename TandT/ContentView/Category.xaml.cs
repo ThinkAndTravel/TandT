@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class QuestView : ViewCell
+	public partial class Category : ViewCell
 	{
-		public QuestView ()
+		public Category ()
 		{
 			InitializeComponent ();
 		}

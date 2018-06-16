@@ -1,33 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Views.NewsView">
-    <ContentView.Resources>
-        <ResourceDictionary>
-            <Style x:Key="grid" TargetType="Grid">
-                
-            </Style>
-            <Style x:Key="stack" TargetType="StackLayout">
-                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-                <Setter Property="BackgroundColor" Value="White"/>
-            </Style>
-            <Style x:Key="stackHorizontal" TargetType="StackLayout">
-                <Setter Property="Orientation" Value="Horizontal"/>
-            </Style>
-        </ResourceDictionary>
-    </ContentView.Resources>
-  <ContentView.Content>
-      <!--<Grid Style="{StaticResource grid}">
+    <ViewCell.View>
+        <Grid  HorizontalOptions="FillAndExpand" BackgroundColor="White">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Source="{Binding Avatar}" HeightRequest="35"  Grid.Column="0" />
-            --><!--Info--><!--
-            <StackLayout Grid.Column="1" Style="{StaticResource stack}">
-                --><!--Title--><!--
-                <StackLayout  Style="{StaticResource stackHorizontal}">
-                    <Label Text="{Binding Name}"/>
+            <!--Info-->
+            <StackLayout Grid.Column="1">
+                <!--Title-->
+                <StackLayout  Orientation="Horizontal">
+                    <Label Style="{StaticResource label}" Text="{Binding UserName }"/>
                     <Label Text="{Binding UserId}"/>
                     <Label Text="{Binding Time}"/>
                 </StackLayout>
@@ -35,8 +21,12 @@
                 <Label Text="{Binding Text}"/>
 
                 <Image Source="{Binding PhotoUrl}"/>
-
+                <StackLayout  Orientation="Horizontal">
+                    <Label Style="{StaticResource label}" Text="{Binding UserName }"/>
+                    <Label Text="{Binding UserId}"/>
+                    <Label Text="{Binding Time}"/>
+                </StackLayout>
             </StackLayout>
-        </Grid>-->
-  </ContentView.Content>
-</ContentView>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>
