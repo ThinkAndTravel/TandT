@@ -8,5 +8,10 @@ namespace TandT.Views.Dashboard
         {
             InitializeComponent();
         }
+
+        private void OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
     }
 }

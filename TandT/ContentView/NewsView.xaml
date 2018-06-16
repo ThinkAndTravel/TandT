@@ -17,15 +17,15 @@
         </ResourceDictionary>
     </ContentView.Resources>
   <ContentView.Content>
-      <Grid Style="{StaticResource grid}">
+      <!--<Grid Style="{StaticResource grid}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Source="{Binding Avatar}" HeightRequest="35"  Grid.Column="0" />
-            <!--Info-->
+            --><!--Info--><!--
             <StackLayout Grid.Column="1" Style="{StaticResource stack}">
-                <!--Title-->
+                --><!--Title--><!--
                 <StackLayout  Style="{StaticResource stackHorizontal}">
                     <Label Text="{Binding Name}"/>
                     <Label Text="{Binding UserId}"/>
@@ -37,6 +37,6 @@
                 <Image Source="{Binding PhotoUrl}"/>
 
             </StackLayout>
-        </Grid>
+        </Grid>-->
   </ContentView.Content>
 </ContentView>

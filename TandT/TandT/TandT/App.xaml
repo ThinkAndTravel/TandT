@@ -20,6 +20,14 @@
 
             <!--STACKLAYOUT-->
             <!--LISTVIEW-->
+            <Style x:Key="list" TargetType="ListView">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="SeparatorVisibility" Value="Default"/>
+                <Setter Property="SeparatorColor" Value="{StaticResource Color2}"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="HasUnevenRows" Value="True"/>
+            </Style>
             <!--CUSTOM-->
             <Style x:Key="customEntry" TargetType="customview:CustomEntry">
                 <Setter Property="TextColor" Value="Black" />
