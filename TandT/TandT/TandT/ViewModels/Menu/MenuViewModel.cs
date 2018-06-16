@@ -1,14 +1,14 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using BLL;
+using BLL.Setting;
+using Models.Base;
+using Prism.Commands;
+using Prism.Modularity;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace TandT.ViewModels
 {
-	public class MenuViewModel : ViewModelBase
+	public class MenuViewModel : BaseVM
     {
         #region VAR 
 
@@ -22,8 +22,8 @@ namespace TandT.ViewModels
         public string Name { get; set; } = "";
 
         #endregion
-
-        public MenuViewModel(INavigationService navigationService) : base(navigationService)
+        
+        public MenuViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod)
         {
             
             NavigateCommand = new DelegateCommand<MenuItem>(OnNavigateCommandExecuted);
@@ -33,9 +33,11 @@ namespace TandT.ViewModels
 
             _items.Add(new MenuItem("Dashboard", "Dashboard?MyBalance&Markets", "house.png"));
             _items.Add(new MenuItem("Quests", "Quests?Cash&Digital&Requests", "map.png"));
-            _items.Add(new MenuItem("Friends", "Dashboard?MyBalance&Markets", "map.png"));
-            _items.Add(new MenuItem("Market", "Withdraw?WCash&WDigital&WEmail&WRequests", "store.png"));
-            _items.Add(new MenuItem("Logout", /*"app:///Login?appModuleRefresh=OnInitialized"*/"", "logout.png"));
+            _items.Add(new MenuItem("Friends", "", "users.png"));
+            _items.Add(new MenuItem("Plans", "", "planning.png"));
+            _items.Add(new MenuItem("Market", "", "store.png"));
+            _items.Add(new MenuItem("Setup", "", "gear.png"));
+            _items.Add(new MenuItem("Logout", "app:///Main?appModuleRefresh=OnInitialized  ", "logout.png"));
 
             Items = new ObservableCollection<MenuItem>(_items);
 
@@ -49,28 +51,23 @@ namespace TandT.ViewModels
 
         #endregion
 
-        private async void OnNavigateCommandExecuted(MenuItem item) =>
-           await Nav.NavigateAsync(item.Path);
-
+        private async void OnNavigateCommandExecuted(MenuItem item)
+        {   if (item.Logo == "logout.png")
+                AuthService.CloseSession();
+            await Nav.NavigateAsync(item.Path);
+        }
         private void MyProfileTappedCommandExecuted()
         {
             //TODO 
         }
-
-        public async void SetupTappedCommandExecuted()
-        {
-            await Nav.NavigateAsync("app:///SetupMenu/Nav/Contact?appModuleRefresh=OnInitialized");
-        }
-
+            
         public override async void Init()
         {
             //var info = await ViewModelBase.Auth?.GetMenuInfo();
-            //AvatarUrl = @"https://cne.cryptonext.net/" + info.Item3;
-            //Name = info.Item1;
-            //Level = "Lvl: " + info.Item2;
-            //RaisePropertyChanged("AvatarUrl");
-            //RaisePropertyChanged("Level");
-            //RaisePropertyChanged("Name");
+            AvatarUrl = "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/24993442_721401698057538_830102265302037757_n.jpg?_nc_cat=0&oh=f7cc6001ea92acea19bfe698f5ed110b&oe=5BB26F96";
+            Name = "Ivanenko";
+            RaisePropertyChanged("AvatarUrl");
+            RaisePropertyChanged("Name");
         }
     }
 

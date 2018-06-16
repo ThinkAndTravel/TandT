@@ -10,8 +10,8 @@ using Xamarin.Forms.Xaml;
 namespace ContentView.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NewsView : ContentView
-	{
+	public partial class NewsView : Xamarin.Forms.ContentView
+    {
 		public NewsView ()
 		{
 			InitializeComponent ();

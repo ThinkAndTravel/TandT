@@ -1,32 +1,34 @@
-﻿using Prism.Modularity;
+﻿using Models.Base;
+using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 
 namespace TandT.ViewModels
 {
-    public class MainPageViewModel : BindableBase
+    public class MainPageViewModel : BaseVM
     {
-        private readonly IModuleManager _moduleManager;
-        private readonly INavigationService _navigationService;
-
-        public MainPageViewModel(INavigationService navigationService, IModuleManager module) 
+        public MainPageViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod)
         {
-            _moduleManager = module;
-            _navigationService = navigationService;
-            Init();
+            //Init();
         }
 
-        public async void Init()
+        public override async void Init()
         {
-            if (BLL.UserSetting.Data.ContainsKey("email"))
+            if (BLL.AuthService.Logged)
             {
-                await _navigationService.NavigateAsync("Menu/Nav/Dashboard?News&Profile");
+                await Nav.NavigateAsync("Menu/Nav");
             }
             else
             {
-                _moduleManager.LoadModule("Identity");
-                await _navigationService.NavigateAsync("Login");
+                Mod.LoadModule("Identity");
+                await Nav.NavigateAsync("Login");
             }
         }
+
+        public override void OnNavigatedTo(NavigationParameters parameters)
+        {
+            Init();
+        }
+
     }
 }

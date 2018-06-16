@@ -14,7 +14,8 @@ namespace Execution
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
+            
+           // containerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
         }
     }
 }

@@ -105,7 +105,7 @@ namespace Identity.ViewModels
                     var data = new Dictionary<string, string>();
                     data.Add("password", Password);
                     data.Add("email", Email);
-                    await UserSetting.Registration(data);
+                    await AuthService.Registration(data);
                     await Nav.GoBackAsync();
                 }
             }

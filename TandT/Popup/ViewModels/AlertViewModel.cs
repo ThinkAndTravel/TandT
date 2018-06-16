@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Popup.ViewModels
 {
-	public class AlertViewModel : BindableBase, INavigationAware, IPageLifecycleAware
+	public class AlertViewModel : BindableBase
     {
         public AlertViewModel()
         {
@@ -53,20 +53,7 @@ namespace Popup.ViewModels
             await PopupNavigation.PopAsync();
         }
 
-        public void OnNavigatingTo(NavigationParameters parameters)
-        {
-           
-        }
-
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-           
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-        }
-
+       
         public void OnAppearing()
         {
             try
@@ -77,11 +64,6 @@ namespace Popup.ViewModels
                 RaisePropertyChanged("Title");
             }
             catch { }
-        }
-
-        public void OnDisappearing()
-        {
-           
         }
     }
 }

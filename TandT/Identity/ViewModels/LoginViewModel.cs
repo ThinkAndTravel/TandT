@@ -88,19 +88,19 @@ namespace Identity.ViewModels
         private async void AttemptForgotPas()
         {
             await Nav.NavigateAsync("Forgot");
-        }
+        }   
 
         private async void AttemptLogin()
         {
             if (CanExecuteLogin)
-                if (!await BLL.AuthService.Login(email, password))
+                if (await BLL.AuthService.Login(email, password))
                 {
-                    BLL.UserSetting.NewSession(email,password);
+                    BLL.AuthService.NewSession(email,password);
                     await Nav.GoBackAsync();
                 }
                 else
                 {
-                    Mod.LoadModule("Popup");
+                    
                     var data = new Dictionary<string, string>();
                     data.Add("Msg", "Login failed. Please try again.");
                     data.Add("Title", "ERROR");
