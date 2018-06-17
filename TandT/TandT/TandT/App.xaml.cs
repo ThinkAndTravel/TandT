@@ -37,18 +37,18 @@ namespace TandT
             containerRegistry.RegisterForNavigation<Dashboard, DashboardViewModel>("Dashboard");
             containerRegistry.RegisterForNavigation<News, NewsViewModel>("News");
             containerRegistry.RegisterForNavigation<Profile, ProfileViewModel>("Profile");
-            containerRegistry.RegisterForNavigation<UserQuests>();
-            containerRegistry.RegisterForNavigation<Quests>();
-            containerRegistry.RegisterForNavigation<Market>();
-            containerRegistry.RegisterForNavigation<Friends>();
-            containerRegistry.RegisterForNavigation<Plans>();
-            containerRegistry.RegisterForNavigation<QCategory>();
-            containerRegistry.RegisterForNavigation<NewPlan>();
-            containerRegistry.RegisterForNavigation<FriendPlans>();
-            containerRegistry.RegisterForNavigation<MyPlans>();
-            containerRegistry.RegisterForNavigation<Setup>();
-            containerRegistry.RegisterForNavigation<RecommendedQ>();
-            containerRegistry.RegisterForNavigation<QPersonal>();
+            containerRegistry.RegisterForNavigation<UserQuests, UserQuestsViewModel>("UserQ");
+            containerRegistry.RegisterForNavigation<Quests,QuestsViewModel>("Q");
+            containerRegistry.RegisterForNavigation<Market,MarketViewModel>("Market");
+            containerRegistry.RegisterForNavigation<Friends, FriendsViewModel>("Friends");
+            containerRegistry.RegisterForNavigation<Plans, PlansViewModel>("Plans");
+            containerRegistry.RegisterForNavigation<QCategory,QCategoryViewModel>("QCategory");
+            containerRegistry.RegisterForNavigation<NewPlan,NewPlanViewModel>("NewPlan");
+            containerRegistry.RegisterForNavigation<FriendPlans, FriendsViewModel>("FriendPlans");
+            containerRegistry.RegisterForNavigation<MyPlans,MyPlansViewModel>("MyPlans");
+            containerRegistry.RegisterForNavigation<Setup,SetupViewModel>("Setup");
+            containerRegistry.RegisterForNavigation<RecommendedQ, RecommendedQViewModel>("RecommendedQ");
+            containerRegistry.RegisterForNavigation<QPersonal, QPersonalViewModel>("QPersonal");
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

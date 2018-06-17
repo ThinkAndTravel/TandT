@@ -31,8 +31,8 @@ namespace TandT.ViewModels
             var _items = new ObservableCollection<MenuItem>();
 
             _items.Add(new MenuItem("Dashboard", "Nav/Dashboard?MyBalance&Markets", "house.png"));
-            _items.Add(new MenuItem("Quests", "Nav/Quests?&RecommendedQ&QCategory&QPersonal", "map.png"));
-            _items.Add(new MenuItem("Friends", "Nav/Friends?", "users.png"));
+            _items.Add(new MenuItem("Quests", "Nav/Q?&RecommendedQ&QCategory&QPersonal", "map.png"));
+            _items.Add(new MenuItem("Friends", "Nav/Friends", "users.png"));
             _items.Add(new MenuItem("Plans", "Nav/Plans?MyPlans&FriendPlans&NewPlan", "planning.png"));
             _items.Add(new MenuItem("Market", "Nav/Market", "store.png"));
             _items.Add(new MenuItem("Setup", "Nav/Setup", "gear.png"));

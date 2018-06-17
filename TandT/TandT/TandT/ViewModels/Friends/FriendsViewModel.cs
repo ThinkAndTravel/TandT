@@ -11,6 +11,7 @@ namespace TandT.ViewModels
 
         public FriendsViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod)
         {
+            Title = "Friends";
         }
 
         public override void Init()

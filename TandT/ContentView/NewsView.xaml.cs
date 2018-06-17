@@ -10,5 +10,18 @@ namespace Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Share(object sender, System.EventArgs e)
+        {
+            
+        }
+        private void Like(object sender, System.EventArgs e)
+        {
+
+        }
+        private void Comment(object sender, System.EventArgs e)
+        {
+
+        }
+    }
 }

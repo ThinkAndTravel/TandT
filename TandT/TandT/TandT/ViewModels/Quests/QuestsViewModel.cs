@@ -13,6 +13,7 @@ namespace TandT.ViewModels
 	{
         public QuestsViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod)
         {
+            Title = "Quests";
         }
 
         public override void Init()

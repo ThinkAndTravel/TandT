@@ -15,12 +15,14 @@ namespace TandT.ViewModels
 	{
         public MarketViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod)
         {
+            Title = "Market";
         }
 
         public override void Init()
         {
             
         }
+
         #region VAR 
         ObservableCollection<MarketItem> items;
         public ObservableCollection<MarketItem> Items {

@@ -55,17 +55,12 @@
                             </Grid.RowDefinitions>
                             <ffimageloading:CachedImage  Style="{StaticResource avatar}"
                                 Grid.Row="1"
-                                Grid.Column="1"
-                               
-                                DownsampleToViewSize="true"
-                                Aspect="AspectFit"
-                                ErrorPlaceholder="user.png"
-                                LoadingPlaceholder="user.png"
+                                Grid.Column="1"                              
                                 HeightRequest="80" WidthRequest="80"
                                 Source="{Binding AvatarUrl}">
                                 <ffimageloading:CachedImage.Transformations>
                                     <fftransformations:CircleTransformation
-                                        BorderHexColor="{StaticResource Color2}"                                  
+                                        BorderHexColor="#4DD9EA"                                  
                                         BorderSize="3"/>
                                 </ffimageloading:CachedImage.Transformations>
                             </ffimageloading:CachedImage>

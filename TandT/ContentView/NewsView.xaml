@@ -1,31 +1,80 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Views.NewsView">
+             x:Class="Views.NewsView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
     <ViewCell.View>
-        <Grid  HorizontalOptions="FillAndExpand" BackgroundColor="White">
+        <Grid  HorizontalOptions="FillAndExpand" BackgroundColor="White" Margin="5,0,5,2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="{Binding Avatar}" HeightRequest="35"  Grid.Column="0" />
+            <ffimageloading:CachedImage  
+                                Style="{StaticResource avatar}"
+                                Grid.Column="0"                              
+                                HeightRequest="50" WidthRequest="50"
+                                Source="{Binding Avatar}">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation
+                                        BorderHexColor="#4DD9EA"                                  
+                                        BorderSize="3"/>
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+            
             <!--Info-->
             <StackLayout Grid.Column="1">
                 <!--Title-->
-                <StackLayout  Orientation="Horizontal">
-                    <Label Style="{StaticResource label}" Text="{Binding UserName }"/>
-                    <Label Text="{Binding UserId}"/>
-                    <Label Text="{Binding Time}"/>
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Style="{StaticResource label}"
+                           FontSize="Small"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"
+                           Text="{Binding UserName}"/>
+                    <Label Text="{Binding UserId}"
+                           Margin="10,0,1,0"
+                           FontSize="Small"                          
+                           Style="{StaticResource label}"
+                           FontAttributes="Italic"/>
+                    <Label HorizontalOptions="EndAndExpand"
+                           Text="{Binding Time}"/>
                 </StackLayout>
 
-                <Label Text="{Binding Text}"/>
+                <Label Style="{StaticResource helpLabel}" FontSize="Small" Text="{Binding Text}"/>
 
                 <Image Source="{Binding PhotoUrl}"/>
-                <StackLayout  Orientation="Horizontal">
-                    <Label Style="{StaticResource label}" Text="{Binding UserName }"/>
-                    <Label Text="{Binding UserId}"/>
-                    <Label Text="{Binding Time}"/>
-                </StackLayout>
+                
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0"  Orientation="Horizontal" HorizontalOptions="Start">
+                        <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Comment"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="comment.png" 
+                               HeightRequest="20"/>
+                        <Label Style="{StaticResource helpLabel}" 
+                               Text="{Binding CommentValue }"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Comment"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="{Binding LikeSource}"
+                               HeightRequest="20"/>
+                        <Label Style="{StaticResource helpLabel}" 
+                               Text="{Binding LikesValue}"/>
+                    </StackLayout>
+
+                    <Image Grid.Column="2" Source="share.png" HorizontalOptions="EndAndExpand" HeightRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Share"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
             </StackLayout>
         </Grid>
     </ViewCell.View>

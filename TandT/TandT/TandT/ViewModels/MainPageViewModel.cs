@@ -26,7 +26,7 @@ namespace TandT.ViewModels
             
             if (BLL.AuthService.Logged)
             {
-                await Nav.NavigateAsync("Menu/Nav");
+                await Nav.NavigateAsync("Menu/Nav/Dashboard?MyBalance&Markets");
             }
             else
             {

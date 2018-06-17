@@ -8,6 +8,7 @@ namespace TandT.ViewModels
 	{
         public DashboardViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod)
         {
+            Title = "Dashboard";
         }
 
         public override void Init()

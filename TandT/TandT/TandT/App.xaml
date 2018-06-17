@@ -19,6 +19,14 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="FontSize" Value="Micro" />
             </Style>
+            <Style x:Key="helpLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="1,0,1,0" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource Color1}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
             <!--IMAGE-->
             <Style x:Key="avatar" TargetType="ffimageloading:CachedImage">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
