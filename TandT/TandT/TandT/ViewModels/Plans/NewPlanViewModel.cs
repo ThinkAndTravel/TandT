@@ -1,16 +1,19 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Models.Base;
+using Prism.Modularity;
+using Prism.Navigation;
 
 namespace TandT.ViewModels
 {
-	public class NewPlanViewModel : BindableBase
+	public class NewPlanViewModel : BaseTabVM
 	{
-        public NewPlanViewModel()
-        {
 
+        public NewPlanViewModel(INavigationService nav, IModuleManager mod) : base(nav, mod, false)
+        {
         }
-	}
+
+        public override void Init()
+        {
+            
+        }
+    }
 }

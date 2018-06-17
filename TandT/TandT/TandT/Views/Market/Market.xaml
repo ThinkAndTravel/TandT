@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:views="clr-namespace:Views;assembly=Views"
              Title="{Binding Title}"
              x:Class="TandT.Views.Market.Market">
     <ListView Style="{StaticResource list}"
@@ -10,7 +11,7 @@
               ItemsSource="{Binding Items}">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <views:FriendView/>
+                <views:MarketItem/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

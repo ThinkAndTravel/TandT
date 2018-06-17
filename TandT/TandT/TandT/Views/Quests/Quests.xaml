@@ -4,6 +4,11 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="{Binding Title}"
+             xmlns:local="clr-namespace:TandT.Views.Quests"  
              x:Class="TandT.Views.Market.Quests">
-  
+    <TabbedPage.Children>
+        <local:RecommendedQ Title="Recommended" />
+        <local:QCategory Title="Category"/>
+        <local:QPersonal Title="Personal"/>
+    </TabbedPage.Children>
 </TabbedPage>

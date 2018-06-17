@@ -2,7 +2,7 @@
 
 namespace TandT.Views.Market
 {
-    public partial class Quests : ContentPage
+    public partial class Quests :TabbedPage
     {
         public Quests()
         {

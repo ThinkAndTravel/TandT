@@ -1,10 +1,12 @@
 ﻿using Models.Base;
+using Models.View;
 using Prism.Commands;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace TandT.ViewModels
@@ -19,6 +21,13 @@ namespace TandT.ViewModels
         {
             
         }
-
+        
+        #region VAR 
+        ObservableCollection<QuestView> items;
+        public ObservableCollection<QuestView> Items {
+            get { return items; }
+            set { SetProperty(ref items, value); }
+        }
+        #endregion
     }
 }

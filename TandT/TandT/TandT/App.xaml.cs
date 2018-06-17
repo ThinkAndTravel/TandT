@@ -48,7 +48,6 @@ namespace TandT
             containerRegistry.RegisterForNavigation<MyPlans>();
             containerRegistry.RegisterForNavigation<Setup>();
             containerRegistry.RegisterForNavigation<RecommendedQ>();
-            containerRegistry.RegisterForNavigation<PersonalQ>();
             containerRegistry.RegisterForNavigation<QPersonal>();
         }
 
