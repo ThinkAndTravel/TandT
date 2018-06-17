@@ -10,6 +10,8 @@ using TandT.Views.Dashboard;
 using TandT.Views.Market;
 using TandT.Views.Plans;
 using TandT.Views.Friends;
+using TandT.Views.Quests;
+using TandT.Views.Setup;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TandT
@@ -40,6 +42,14 @@ namespace TandT
             containerRegistry.RegisterForNavigation<Market>();
             containerRegistry.RegisterForNavigation<Friends>();
             containerRegistry.RegisterForNavigation<Plans>();
+            containerRegistry.RegisterForNavigation<QCategory>();
+            containerRegistry.RegisterForNavigation<NewPlan>();
+            containerRegistry.RegisterForNavigation<FriendPlans>();
+            containerRegistry.RegisterForNavigation<MyPlans>();
+            containerRegistry.RegisterForNavigation<Setup>();
+            containerRegistry.RegisterForNavigation<RecommendedQ>();
+            containerRegistry.RegisterForNavigation<PersonalQ>();
+            containerRegistry.RegisterForNavigation<QPersonal>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

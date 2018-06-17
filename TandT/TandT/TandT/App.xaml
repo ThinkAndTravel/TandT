@@ -10,6 +10,7 @@
             <Color x:Key="Color1">#081B29</Color>
             <Color x:Key="Color2">#4DD9EA</Color>
             <Color x:Key="Color3">#113855</Color>
+            <Color x:Key="Color4">#C6C9FF</Color>
             <!--LABEL-->
             <Style x:Key="label" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center"/>

@@ -1,10 +1,10 @@
 ﻿using Xamarin.Forms;
 
-namespace TandT.Views.Plans
+namespace TandT.Views.Setup
 {
-    public partial class Plans : TabbedPage
+    public partial class Setup : ContentPage
     {
-        public Plans()
+        public Setup()
         {
             InitializeComponent();
         }

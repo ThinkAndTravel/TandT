@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace TandT.ViewModels
 {
-	public class QuestsViewModel : BindableBase
+	public class FriendPlansViewModel : BindableBase
 	{
-        public QuestsViewModel()
+        public FriendPlansViewModel()
         {
 
         }

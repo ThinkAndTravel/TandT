@@ -31,12 +31,12 @@ namespace TandT.ViewModels
             var _items = new ObservableCollection<MenuItem>();
 
             _items.Add(new MenuItem("Dashboard", "Dashboard?MyBalance&Markets", "house.png"));
-            _items.Add(new MenuItem("Quests", "Quests?Cash&Digital&Requests", "map.png"));
-            _items.Add(new MenuItem("Friends", "", "users.png"));
-            _items.Add(new MenuItem("Plans", "", "planning.png"));
-            _items.Add(new MenuItem("Market", "", "store.png"));
-            _items.Add(new MenuItem("Setup", "", "gear.png"));
-            _items.Add(new MenuItem("Logout", "app:///Main?appModuleRefresh=OnInitialized  ", "logout.png"));
+            _items.Add(new MenuItem("Quests", "Quests?&Digital&Requests", "map.png"));
+            _items.Add(new MenuItem("Friends", "Friends?", "users.png"));
+            _items.Add(new MenuItem("Plans", "Plans?MyPlans&FriendPlans&NewPlan", "planning.png"));
+            _items.Add(new MenuItem("Market", "Nav/Market", "store.png"));
+            _items.Add(new MenuItem("Setup", "Setup", "gear.png"));
+            _items.Add(new MenuItem("Logout", "app:///Main?appModuleRefresh=OnInitialized", "logout.png"));
 
             Items = new ObservableCollection<MenuItem>(_items);
 

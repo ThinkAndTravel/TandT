@@ -2,9 +2,9 @@
 
 namespace TandT.Views.Plans
 {
-    public partial class Plans : TabbedPage
+    public partial class NewPlan : ContentPage
     {
-        public Plans()
+        public NewPlan()
         {
             InitializeComponent();
         }
