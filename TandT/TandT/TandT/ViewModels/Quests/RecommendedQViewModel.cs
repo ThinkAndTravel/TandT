@@ -19,8 +19,8 @@ namespace TandT.ViewModels
         }
 
         #region VAR 
-        ObservableCollection<QuestView> items;
-        public ObservableCollection<QuestView> Items {
+        ObservableCollection<QuestItem> items;
+        public ObservableCollection<QuestItem> Items {
             get { return items; }
             set { SetProperty(ref items, value); }
         }

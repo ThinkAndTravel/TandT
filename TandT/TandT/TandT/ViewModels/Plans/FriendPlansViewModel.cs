@@ -22,8 +22,8 @@ namespace TandT.ViewModels
             
         }
         #region VAR 
-        ObservableCollection<PlanView> items;
-        public ObservableCollection<PlanView> Items {
+        ObservableCollection<PlanItem> items;
+        public ObservableCollection<PlanItem> Items {
             get { return items; }
             set { SetProperty(ref items, value); }
         }

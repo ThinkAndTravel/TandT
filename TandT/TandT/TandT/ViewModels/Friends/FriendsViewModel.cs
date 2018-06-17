@@ -18,8 +18,8 @@ namespace TandT.ViewModels
             
         }
         #region VAR 
-        ObservableCollection<UserView> items;
-        public ObservableCollection<UserView> Items {
+        ObservableCollection<UserItem> items;
+        public ObservableCollection<UserItem> Items {
             get { return items; }
             set { SetProperty(ref items, value); }
         }

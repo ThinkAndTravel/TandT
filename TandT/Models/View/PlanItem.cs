@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models.View
 {
-    public class CategoryView
+    public class PlanItem
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models.View
 {
-    public class QuestView
+    public class QuestItem
     {
         public string Id { get; set; }
         public string Title { get; set; }

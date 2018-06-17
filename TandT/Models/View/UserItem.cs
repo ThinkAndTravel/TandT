@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models.View
 {
-    public class UserView
+    public class UserItem
     {
         public string Name { get; set; }
         public string Id { get; set; }
