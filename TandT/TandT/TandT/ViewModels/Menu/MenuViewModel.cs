@@ -18,8 +18,8 @@ namespace TandT.ViewModels
             set { SetProperty(ref items, value); }
         }
 
-        public string AvatarUrl { get; set; } = "";
-        public string Name { get; set; } = "";
+        public string AvatarUrl { get; set; } = "user.png";
+        public string Name { get; set; } = "Slawik Ivanenko";
 
         #endregion
         

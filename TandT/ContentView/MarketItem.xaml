@@ -4,7 +4,7 @@
              x:Class="Views.MarketItem">
   <ViewCell.View>
       <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
+            <Label FontSize="Medium" Style="label" Text="Await 'Market' in future releases"/>
+        </StackLayout>
   </ViewCell.View>
 </ViewCell>

@@ -1,10 +1,55 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Views.QuestView">
+             x:Class="Views.QuestView" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
     <ViewCell.View>
-        <StackLayout>
-            <Label Text="Hello Xamarin.Forms!" />
-        </StackLayout>
+        <Grid  HorizontalOptions="FillAndExpand" 
+               HeightRequest="150"
+               ColumnSpacing="0"
+               Margin="0,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         BackgroundColor="{Binding TabColor}">
+            </StackLayout>
+
+            <ffimageloading:CachedImage
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Aspect="AspectFill"
+                Opacity="0.9" 
+                Source="https://pp.userapi.com/c407128/v407128643/2e58/J7AC7AYBHXI.jpg"/>
+            <StackLayout Grid.Column="1" 
+                         Orientation="Horizontal" 
+                         HorizontalOptions="FillAndExpand">
+                <Label FontSize="Medium" 
+                       Margin="10,10,10,10"
+                       TextColor="White"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start"
+                       Text="Містичний КИЇВ"/>
+                <StackLayout  HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand"> 
+                    <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/1024px-5_stars.svg.png" 
+                           HeightRequest="13"
+                           Margin="0,15,10,10"
+                           VerticalOptions="Start"
+                           HorizontalOptions="EndAndExpand"/>
+                    <Label FontSize="Small" 
+                             Margin="10,10,10,10"
+                       TextColor="White"
+                       VerticalOptions="Start"
+                       HorizontalOptions="EndAndExpand"
+                       Text="Free"/>  
+                </StackLayout>
+            </StackLayout>
+        </Grid>
     </ViewCell.View>
 </ViewCell>

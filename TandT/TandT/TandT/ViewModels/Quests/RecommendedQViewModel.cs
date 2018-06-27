@@ -3,6 +3,7 @@ using Models.View;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace TandT.ViewModels
@@ -15,7 +16,10 @@ namespace TandT.ViewModels
 
         public override void Init()
         {
-            
+            var list = new List<QuestItem>();
+
+            list.Add(new QuestItem());
+            Items = new ObservableCollection<QuestItem>(list);
         }
 
         #region VAR 

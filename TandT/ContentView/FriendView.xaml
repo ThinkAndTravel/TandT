@@ -1,10 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Views.FriendView">
-  <ViewCell.View>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ViewCell.View>
+             x:Class="Views.FriendView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+    <ViewCell.View>
+        <Grid  HorizontalOptions="FillAndExpand" BackgroundColor="White" Margin="5,0,5,2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+                
+                
+            </Grid.ColumnDefinitions>
+            
+            <ffimageloading:CachedImage  
+                                Style="{StaticResource avatar}"
+                                Grid.Column="0"                              
+                                HeightRequest="60" WidthRequest="60"
+                                Source="{Binding Avatar}">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation
+                                        BorderHexColor="#4DD9EA"                                  
+                                        BorderSize="3"/>
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+
+            <!--Info-->
+            <StackLayout Grid.Column="1">
+                <!--Title-->
+                <StackLayout   HorizontalOptions="FillAndExpand">
+                    <Label Style="{StaticResource helpLabel}"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"
+                           Text="{Binding UserName}"/>
+                    <Label Text="{Binding UserId}"
+                           Margin="10,0,1,0"
+                           FontSize="Small" 
+                           TextColor="Gray"                     
+                           FontAttributes="Italic"/>
+                </StackLayout>
+                
+            </StackLayout>
+        </Grid>
+    </ViewCell.View>
 </ViewCell>
